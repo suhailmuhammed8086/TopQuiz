@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_one"
+    android:fillViewport="true"
+    tools:context=".ui.game.settings.GameSettingsActivity">
+
+    <com.example.quiztap.components.BackgroundView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:foreground="@color/foreground_wrapper_dark"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/topBanner"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="-20dp"
+        android:background="@color/app_one"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/topBanner"
+        app:layout_constraintEnd_toEndOf="@id/topBanner"
+        app:layout_constraintStart_toStartOf="@id/topBanner"
+        app:layout_constraintTop_toTopOf="@id/topBanner" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBanner">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingVertical="20dp">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.075" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.925" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:includeFontPadding="false"
+                android:text="Question count"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--            <androidx.appcompat.widget.AppCompatImageButton-->
+            <!--                android:id="@+id/btnSubNum"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:background="@null"-->
+            <!--                android:src="@drawable/ic_add"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/tvQuestion"-->
+            <!--                app:layout_constraintDimensionRatio="1:1"-->
+            <!--                app:layout_constraintEnd_toStartOf="@id/tvQuestionInput"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/tvQuestion"-->
+            <!--                app:layout_constraintWidth_percent="0.1" />-->
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/tvQuestionInput"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:background="@color/light_blue"-->
+            <!--                android:gravity="center"-->
+            <!--                android:includeFontPadding="false"-->
+            <!--                android:minWidth="50dp"-->
+            <!--                android:text="0"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="18sp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/btnSubNum"-->
+            <!--                app:layout_constraintEnd_toStartOf="@id/btnAddNum"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/btnSubNum" />-->
+
+            <!--            <androidx.appcompat.widget.AppCompatImageButton-->
+            <!--                android:id="@+id/btnAddNum"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:background="@null"-->
+            <!--                android:src="@drawable/ic_add"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/tvQuestion"-->
+            <!--                app:layout_constraintDimensionRatio="1:1"-->
+            <!--                app:layout_constraintEnd_toEndOf="@id/endGuide"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/tvQuestion"-->
+            <!--                app:layout_constraintWidth_percent="0.1" />-->
+
+            <com.example.quiztap.components.LeftRightOptionVIew
+                android:id="@+id/questionCountView"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion"
+                app:layout_constraintWidth_percent="0.6" />
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/btnEasy"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="30dp"-->
+            <!--                android:background="@color/light_blue"-->
+            <!--                android:paddingHorizontal="20dp"-->
+            <!--                android:paddingVertical="10dp"-->
+            <!--                android:text="Easy"-->
+            <!--                android:textColor="@color/white"-->
+
+            <!--                android:textSize="14sp"-->
+            <!--                app:layout_constraintEnd_toStartOf="@id/btnMedium"-->
+            <!--                app:layout_constraintHorizontal_chainStyle="spread_inside"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/startGuide"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/tvQuestion" />-->
+
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/btnMedium"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@color/light_blue"-->
+            <!--                android:paddingHorizontal="20dp"-->
+            <!--                android:paddingVertical="10dp"-->
+            <!--                android:text="Medium"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="14sp"-->
+            <!--                app:layout_constraintEnd_toStartOf="@id/btnHard"-->
+            <!--                app:layout_constraintStart_toEndOf="@id/btnEasy"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/btnEasy" />-->
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/btnHard"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@color/light_blue"-->
+            <!--                android:paddingHorizontal="20dp"-->
+            <!--                android:paddingVertical="10dp"-->
+            <!--                android:text="Hard"-->
+            <!--                android:textColor="@color/white"-->
+
+            <!--                android:textSize="14sp"-->
+            <!--                app:layout_constraintEnd_toEndOf="@id/endGuide"-->
+            <!--                app:layout_constraintStart_toEndOf="@id/btnMedium"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/btnEasy" />-->
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDifficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:includeFontPadding="false"
+                android:text="Difficulty"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/questionCountView" />
+
+            <com.example.quiztap.components.MultiOptionView
+                android:id="@+id/multiOptionDifficulty"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_rounded_10r"
+                android:backgroundTint="@color/app_one_light"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/tvDifficulty" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:includeFontPadding="false"
+                android:text="Category"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/multiOptionDifficulty" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCategoryInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_rounded_10r"
+                android:backgroundTint="@color/app_one_light"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:minHeight="48dp"
+                android:paddingVertical="10dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="25dp"
+                android:text="Select Category"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/tvCategory" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCategory"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/img_category"
+                app:layout_constraintBottom_toBottomOf="@id/tvCategoryInput"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/tvCategoryInput"
+                app:layout_constraintTop_toTopOf="@id/tvCategory" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:includeFontPadding="false"
+                android:text="Time"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/tvCategoryInput" />
+
+
+            <com.example.quiztap.components.MultiOptionView
+                android:id="@+id/multiOptionTimeSetting"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_rounded_10r"
+                android:backgroundTint="@color/app_one_light"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+            <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
+            <!--                android:id="@+id/cbNoTime"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:includeFontPadding="false"-->
+            <!--                android:minHeight="0dp"-->
+            <!--                android:paddingStart="10dp"-->
+            <!--                android:paddingEnd="10dp"-->
+            <!--                android:text="No Time"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="15sp"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/startGuide"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/tvTime" />-->
+
+            <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
+            <!--                android:id="@+id/cbTimePerQs"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:includeFontPadding="false"-->
+            <!--                android:minHeight="0dp"-->
+            <!--                android:paddingStart="10dp"-->
+            <!--                android:paddingEnd="10dp"-->
+            <!--                android:text="Time per question"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="15sp"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/startGuide"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/cbNoTime" />-->
+
+            <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
+            <!--                android:id="@+id/cbTimePerSession"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:includeFontPadding="false"-->
+            <!--                android:minHeight="0dp"-->
+            <!--                android:paddingStart="10dp"-->
+            <!--                android:paddingEnd="10dp"-->
+            <!--                android:text="Time per session"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="15sp"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/startGuide"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/cbTimePerQs" />-->
+
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:id="@+id/timeSettingSection"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                app:layout_constraintEnd_toEndOf="@id/endGuide"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/startGuide"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/multiOptionTimeSetting">-->
+
+            <!--                <androidx.appcompat.widget.AppCompatImageButton-->
+            <!--                    android:id="@+id/btnSubTime"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="0dp"-->
+            <!--                    android:background="@null"-->
+            <!--                    android:src="@drawable/ic_add"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintDimensionRatio="1:1"-->
+            <!--                    app:layout_constraintEnd_toStartOf="@id/tvTimeInput"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent"-->
+            <!--                    app:layout_constraintWidth_percent="0.1" />-->
+
+            <!--                <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                    android:id="@+id/tvTimeInput"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="0dp"-->
+            <!--                    android:background="@color/light_blue"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:includeFontPadding="false"-->
+            <!--                    android:text="0"-->
+            <!--                    android:textColor="@color/white"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@id/btnSubTime"-->
+            <!--                    app:layout_constraintEnd_toStartOf="@id/btnAddTime"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/btnSubTime"-->
+            <!--                    app:layout_constraintWidth_percent="0.5" />-->
+
+            <!--                <androidx.appcompat.widget.AppCompatImageButton-->
+            <!--                    android:id="@+id/btnAddTime"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="0dp"-->
+            <!--                    android:background="@null"-->
+            <!--                    android:src="@drawable/ic_add"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@id/btnSubTime"-->
+            <!--                    app:layout_constraintDimensionRatio="1:1"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/btnSubTime"-->
+            <!--                    app:layout_constraintWidth_percent="0.1" />-->
+
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+            <com.example.quiztap.components.LeftRightOptionVIew
+                android:id="@+id/timeSettingsView"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/multiOptionTimeSetting"
+                app:layout_constraintWidth_percent="0.6" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:includeFontPadding="false"
+                android:text="Type"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/timeSettingsView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAnswerTypeInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:includeFontPadding="false"
+                android:text="You Need to select at least one type"
+                android:textColor="@color/gold"
+                android:textSize="10sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tvType"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintTop_toTopOf="@id/tvType" />
+
+            <com.example.quiztap.components.MultiOptionView
+                android:id="@+id/answerTypeOptionView"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_rounded_10r"
+                android:backgroundTint="@color/app_one_light"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/tvType" />
+
+            <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
+            <!--                android:id="@+id/tvMultipleChoice"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:background="@drawable/bg_full_rounded"-->
+            <!--                android:backgroundTint="@color/app_four"-->
+            <!--                android:button="@null"-->
+            <!--                android:fontFamily="@font/montserrat_bold"-->
+            <!--                android:gravity="center"-->
+            <!--                android:includeFontPadding="false"-->
+            <!--                android:minHeight="48dp"-->
+            <!--                android:paddingHorizontal="10dp"-->
+            <!--                android:paddingStart="10dp"-->
+            <!--                android:text="Multiple Choices"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="18sp"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/startGuide"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/tvType" />-->
+
+            <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
+            <!--                android:id="@+id/tvYesOrNo"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:background="@drawable/bg_full_rounded"-->
+            <!--                android:backgroundTint="@color/app_four"-->
+            <!--                android:button="@null"-->
+            <!--                android:fontFamily="@font/montserrat_bold"-->
+            <!--                android:gravity="center"-->
+            <!--                android:includeFontPadding="false"-->
+            <!--                android:minHeight="48dp"-->
+            <!--                android:paddingStart="10dp"-->
+            <!--                android:text="Yes or No"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="18sp"-->
+            <!--                app:layout_constraintEnd_toEndOf="@id/tvMultipleChoice"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/startGuide"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/tvMultipleChoice" />-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/bg_10r_rounded"
+        android:backgroundTint="@color/app_four"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:minHeight="48dp"
+        android:paddingVertical="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Generate Questions"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_one"
+    tools:context=".ui.home.HomeActivity">
+
+    <com.example.quiztap.components.BackgroundView
+        android:layout_width="0dp"
+        android:id="@+id/bgView"
+        android:layout_height="0dp"
+        android:foreground="@color/foreground_wrapper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.925" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/middleGuideLine"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/topGuide" />
+
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/btnPlay"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/app_bg_gradient_2"-->
+    <!--        android:fontFamily="@font/montserrat_medium"-->
+    <!--        android:gravity="center"-->
+    <!--        android:includeFontPadding="false"-->
+    <!--        android:minHeight="60dp"-->
+    <!--        android:text="Play"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="27sp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/btnMultiPlayer"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/endGuide"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/startGuide"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/topGuide"-->
+    <!--        app:layout_constraintVertical_chainStyle="packed" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/btnMultiPlayer"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:background="@drawable/app_bg_gradient_2"-->
+    <!--        android:fontFamily="@font/montserrat_medium"-->
+    <!--        android:gravity="center"-->
+    <!--        android:includeFontPadding="false"-->
+    <!--        android:minHeight="60dp"-->
+    <!--        android:text="Multi Player"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="27sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/endGuide"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/startGuide"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/btnPlay" />-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middleGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".4" />
+
+
+    <!--QuickPlay button start-->
+
+    <com.example.quiztap.components.BackgroundView
+        android:id="@+id/btnQuickPlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_10r_rounded"
+        android:backgroundTint="@color/app_four"
+        android:foreground="@color/foreground_wrapper"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/btnMultiPlayer"
+        app:layout_constraintStart_toStartOf="@id/startGuide"
+        app:layout_constraintTop_toTopOf="@id/middleGuideLine" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuickPlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:includeFontPadding="false"
+        android:minHeight="60dp"
+        android:paddingHorizontal="10dp"
+        android:text="Quick\nPlay"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@id/btnQuickPlay"
+        app:layout_constraintStart_toStartOf="@id/btnQuickPlay"
+        app:layout_constraintTop_toTopOf="@id/btnQuickPlay" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:src="@drawable/img_quick_play"
+        app:layout_constraintBottom_toBottomOf="@id/btnQuickPlay"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/btnQuickPlay"
+        app:layout_constraintStart_toStartOf="@id/btnQuickPlay" />
+
+    <!--QuickPlay button End-->
+
+    <!--MultiPlayer button End-->
+
+    <com.example.quiztap.components.BackgroundView
+        android:id="@+id/btnMultiPlayer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:backgroundTint="@color/app_four"
+        android:foreground="@color/foreground_wrapper"
+        android:background="@drawable/bg_10r_rounded"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        app:layout_constraintStart_toEndOf="@id/btnQuickPlay"
+        app:layout_constraintTop_toTopOf="@id/btnQuickPlay" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMultiPlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:includeFontPadding="false"
+        android:minHeight="60dp"
+        android:paddingHorizontal="10dp"
+        android:text="Multi Player"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@id/btnMultiPlayer"
+        app:layout_constraintStart_toStartOf="@id/btnMultiPlayer"
+        app:layout_constraintTop_toTopOf="@id/btnMultiPlayer" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:src="@drawable/img_multi_player"
+        app:layout_constraintBottom_toBottomOf="@id/btnMultiPlayer"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/btnMultiPlayer"
+        app:layout_constraintStart_toStartOf="@id/btnMultiPlayer" />
+
+    <!--MultiPlayer button End-->
+
+
+    <!--MultiPlayer button End-->
+
+    <com.example.quiztap.components.BackgroundView
+        android:id="@+id/btnHistory"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_10r_rounded"
+        android:backgroundTint="@color/app_four"
+        android:foreground="@color/foreground_wrapper"
+        app:layout_constraintEnd_toEndOf="@id/endGuide"
+        app:layout_constraintStart_toEndOf="@id/startGuide"
+        app:layout_constraintTop_toBottomOf="@id/btnQuickPlay" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="10dp"
+        android:text="History"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/btnHistory"
+        app:layout_constraintEnd_toEndOf="@id/btnHistory"
+        app:layout_constraintStart_toStartOf="@id/btnHistory"
+        app:layout_constraintTop_toTopOf="@id/btnHistory" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/img_history"
+        app:layout_constraintBottom_toBottomOf="@id/btnHistory"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/btnHistory"
+        app:layout_constraintTop_toTopOf="@id/btnHistory" />
+
+    <!--MultiPlayer button End-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

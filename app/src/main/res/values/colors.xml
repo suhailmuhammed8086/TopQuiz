@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="mainColor">#0B0C1C</color>
+    <color name="darkMainColor">#06060B</color>
+    <color name="gold">#FFC107</color>
+    <color name="grey">#4D4C4A</color>
+    <color name="light_blue">#2d2f39</color>
+    <color name="state_one">#2d2f39</color>
+    <color name="state_two">#FF5722</color>
+    <color name="state_three">#4CAF50</color>
+    <color name="progress_one">#4CAF50</color>
+    <color name="progress_two">#FF9800</color>
+    <color name="progress_three">#F44336</color>
+    <color name="app_one">#1F1E1E</color>
+    <color name="app_one_light">#4B4242</color>
+<!--    <color name="app_one">#009688</color>-->
+    <color name="app_two">#4CAF50</color>
+    <color name="app_three">#3F51B5</color>
+    <color name="app_four">#185D99</color>
+    <color name="foreground_wrapper">#432196F3</color>
+    <color name="foreground_wrapper_dark">#742C1D1D</color>
+    <color name="right_answer">#4CAF50</color>
+    <color name="wrong_answer">#F44336</color>
+
+</resources>
